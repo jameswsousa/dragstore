@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "477748598271",
+    "firebase_url": "https://lojavirtualjames.firebaseio.com",
+    "project_id": "lojavirtualjames",
+    "storage_bucket": "lojavirtualjames.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477748598271:android:cb8258baa3f109779603ca",
+        "android_client_info": {
+          "package_name": "com.example.loja_virtual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477748598271-jqi84ilhpb9cupe8os383enp5vicvil0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxEfwHIL8xL-uX_Arxss5zbfTdLmJ3kGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477748598271-jqi84ilhpb9cupe8os383enp5vicvil0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
