@@ -13,6 +13,7 @@ import 'package:scoped_model/scoped_model.dart';
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("haha");
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -47,10 +48,21 @@ class CartScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Icon(
-                    Icons.remove_shopping_cart,
-                    size: 80,
-                    color: Theme.of(context).primaryColor,
+                  Container(
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    alignment: Alignment.center,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Container(
+                        width: 250,
+                        height: 300,
+                        child: Image.network(
+                          'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/login.gif?alt=media&token=ff700fbf-dd1c-433b-9129-f236731f7a49',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: 16,
@@ -85,13 +97,35 @@ class CartScreen extends StatelessWidget {
             );
           } else if (model.products == null || model.products.length == 0) {
             return Center(
-              child: Text(
-                "Nenhum produto no carrinho!",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    alignment: Alignment.center,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Container(
+                        width: 250,
+                        height: 300,
+                        child: Image.network(
+                          'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/vaicomprar%20(2).gif?alt=media&token=71e74190-b84e-4947-8e63-fa738d70f805',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16,),
+                  Text(
+                    "Nenhum produto no carrinho!",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
             );
           } else {

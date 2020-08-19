@@ -10,7 +10,6 @@ class OrdersTab extends StatelessWidget {
   Widget build(BuildContext context) {
     if (UserModel.of(context).isLoggedIn()) {
       String uid = UserModel.of(context).firebaseUser.uid;
-
       return FutureBuilder<QuerySnapshot>(
         future: Firestore.instance
             .collection('users')
@@ -23,13 +22,48 @@ class OrdersTab extends StatelessWidget {
               child: CustomLoadingWidget(),
             );
           } else {
-            return ListView(
-              children: snapshot.data.documents
-                  .map((doc) => OrderTile(doc.documentID))
-                  .toList()
-                  .reversed
-                  .toList(),
-            );
+            if (snapshot.data.documents.length == 0||snapshot.data.documents == null) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                   Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(10)),
+              alignment: Alignment.center,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Container(
+                  width: 250,
+                  height: 300,
+                  child: Image.network(
+                    'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/sempedidos.gif?alt=media&token=5bf64a77-d027-45a2-adc6-30de94af1ef7',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 16,),
+
+                 Text(
+              "Nenhum pedido foi realizado ainda",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+                ],
+              );
+            } else {
+              return ListView(
+                children: snapshot.data.documents
+                    .map((doc) => OrderTile(doc.documentID))
+                    .toList()
+                    .reversed
+                    .toList(),
+              );
+            }
           }
         },
       );
@@ -40,10 +74,21 @@ class OrdersTab extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Icon(
-              Icons.list,
-              size: 80,
-              color: Theme.of(context).primaryColor,
+            Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(10)),
+              alignment: Alignment.center,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Container(
+                  width: 250,
+                  height: 300,
+                  child: Image.network(
+                    'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/orderlogin.gif?alt=media&token=0c6b124c-eadc-4700-b1de-4f277fe2924b',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
             ),
             SizedBox(
               height: 16,
