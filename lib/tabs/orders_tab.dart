@@ -8,10 +8,8 @@ import 'package:loja_virtual/widgets/loading_animation.dart';
 class OrdersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     if (UserModel.of(context).isLoggedIn()) {
-          String uid = UserModel.of(context).firebaseUser.uid;
-
+      String uid = UserModel.of(context).firebaseUser.uid;
 
       return FutureBuilder<QuerySnapshot>(
         future: Firestore.instance
@@ -28,7 +26,9 @@ class OrdersTab extends StatelessWidget {
             return ListView(
               children: snapshot.data.documents
                   .map((doc) => OrderTile(doc.documentID))
-                  .toList().reversed.toList(),
+                  .toList()
+                  .reversed
+                  .toList(),
             );
           }
         },
