@@ -25,10 +25,10 @@ class CategoryTile extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Text(
           snapshot.data['title'],
-          style: TextStyle(fontSize: 20, color: Color(0xff103981), fontWeight: FontWeight.w500),
+          style: TextStyle(fontSize: 20, color: Colors.pinkAccent[400], fontWeight: FontWeight.w500),
         ),
       ),
-      trailing: Icon(Icons.keyboard_arrow_right),
+      trailing: Icon(Icons.keyboard_arrow_right, color: Colors.cyan,),
       onTap: () {
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => CategoryScreen(snapshot)));

@@ -13,7 +13,6 @@ import 'package:scoped_model/scoped_model.dart';
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print("haha");
     return Scaffold(
       appBar: AppBar(
         title: Text(
