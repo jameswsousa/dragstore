@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/user_model.dart';
 import 'package:loja_virtual/screens/signup_screen.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -56,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
         builder: (context, child, model) {
           if (model.isLoading) {
             return Center(
-              child: CircularProgressIndicator(),
+              child: CustomLoadingWidget(),
             );
           }
           return Form(

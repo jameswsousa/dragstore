@@ -6,6 +6,7 @@ import 'package:loja_virtual/screens/order_screen.dart';
 import 'package:loja_virtual/tiles/cart_tile.dart';
 import 'package:loja_virtual/widgets/cart_price.dart';
 import 'package:loja_virtual/widgets/discount_card.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 import 'package:loja_virtual/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -37,7 +38,7 @@ class CartScreen extends StatelessWidget {
         builder: (context, child, model) {
           if (model.isLoading && UserModel.of(context).isLoggedIn()) {
             return Center(
-              child: CircularProgressIndicator(),
+              child: CustomLoadingWidget(),
             );
           } else if (!UserModel.of(context).isLoggedIn()) {
             return Container(

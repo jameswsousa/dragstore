@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/datas/product_data.dart';
 import 'package:loja_virtual/tiles/product_tile.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 
 class CategoryScreen extends StatelessWidget {
   final DocumentSnapshot snapshot;
@@ -37,7 +38,7 @@ class CategoryScreen extends StatelessWidget {
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
                   return Center(
-                    child: CircularProgressIndicator(),
+                    child: CustomLoadingWidget(),
                   );
                 } else {
                   return TabBarView(

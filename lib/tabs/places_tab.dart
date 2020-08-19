@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/tiles/place_tile.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 
 class PlacesTab extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class PlacesTab extends StatelessWidget {
     ,
     builder: (context, snapshot){
       if(!snapshot.hasData){
-        return Center(child: CircularProgressIndicator(),);
+        return Center(child: CustomLoadingWidget(),);
       }else{
         return ListView(children: snapshot.data.documents.map((doc)=>PlaceTile(doc) ).toList(),);
       }

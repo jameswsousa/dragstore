@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 
 class OrderTile extends StatelessWidget {
   final String orderId;
@@ -20,7 +21,7 @@ class OrderTile extends StatelessWidget {
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return Center(
-                child: CircularProgressIndicator(),
+                child: CustomLoadingWidget(),
               );
             } else {
               int status=snapshot.data['status'];

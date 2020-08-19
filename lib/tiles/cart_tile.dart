@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/datas/cart_product.dart';
 import 'package:loja_virtual/datas/product_data.dart';
 import 'package:loja_virtual/models/cart_model.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 
 class CartTile extends StatelessWidget {
   final CartProduct cartProduct;
@@ -52,7 +53,6 @@ class CartTile extends StatelessWidget {
                       icon: Icon(Icons.remove),
                       onPressed: cartProduct.quantity > 1 ? () {
                         CartModel.of(context).decProduct(cartProduct);
-
                       } : null,
                       color: Theme.of(context).primaryColor,
                     ),
@@ -96,7 +96,7 @@ class CartTile extends StatelessWidget {
                 } else {
                   return Container(
                     height: 70,
-                    child: CircularProgressIndicator(),
+                    child: CustomLoadingWidget(),
                     alignment: Alignment.center,
                   );
                 }

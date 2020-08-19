@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/user_model.dart';
 import 'package:loja_virtual/screens/login_screen.dart';
 import 'package:loja_virtual/tiles/order_tile.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 
 class OrdersTab extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class OrdersTab extends StatelessWidget {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return Center(
-              child: CircularProgressIndicator(),
+              child: CustomLoadingWidget(),
             );
           } else {
             return ListView(

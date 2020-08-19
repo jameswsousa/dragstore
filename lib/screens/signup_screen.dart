@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/user_model.dart';
+import 'package:loja_virtual/widgets/loading_animation.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -45,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
       body: ScopedModelDescendant<UserModel>(builder: (context, child, model) {
         if (model.isLoading)
           return Center(
-            child: CircularProgressIndicator(),
+            child: CustomLoadingWidget(),
           );
         return Form(
             key: _formkey,
