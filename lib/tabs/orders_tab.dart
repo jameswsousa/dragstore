@@ -8,9 +8,11 @@ import 'package:loja_virtual/widgets/loading_animation.dart';
 class OrdersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String uid = UserModel.of(context).firebaseUser.uid;
 
     if (UserModel.of(context).isLoggedIn()) {
+          String uid = UserModel.of(context).firebaseUser.uid;
+
+
       return FutureBuilder<QuerySnapshot>(
         future: Firestore.instance
             .collection('users')
