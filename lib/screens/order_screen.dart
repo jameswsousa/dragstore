@@ -16,11 +16,23 @@ class OrderScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(
-              Icons.check,
-              color: Theme.of(context).primaryColor,
-              size: 80,
-            ),
+           Container(
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    alignment: Alignment.center,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Container(
+                        width: 250,
+                        height: 300,
+                        child: Image.network(
+                          'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/comprou.gif?alt=media&token=944bd6ad-ffcf-4d8d-afe6-eb302f9dea8c',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16,),
             Text(
               "Perido realizado com sucesso",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
