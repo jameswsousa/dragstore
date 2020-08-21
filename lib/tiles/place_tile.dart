@@ -9,6 +9,8 @@ class PlaceTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+              color: Colors.purple[100],
+
       margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

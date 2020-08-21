@@ -14,70 +14,73 @@ class CartTile extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget _buildContent() {
       CartModel.of(context).updatePrices(); 
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(8),
-            width: 150,
-            child: Image.network(
-              cartProduct.productData.images[0],
-              fit: BoxFit.cover,
+      return Container(
+        color: Colors.purple[100],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(8),
+              width: 150,
+              child: Image.network(
+                cartProduct.productData.images[0],
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          Expanded(
-              child: Container(
-            padding: EdgeInsets.all(8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  cartProduct.productData.title,
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
-                ),
-                Text(
-                  "Tamanho: ${cartProduct.size}",
-                  style: TextStyle(fontWeight: FontWeight.w300),
-                ),
-                Text(
-                  "R\$ ${cartProduct.productData.price.toStringAsFixed(2)}",
-                  style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
-                ),
-                Row(
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.remove),
-                      onPressed: cartProduct.quantity > 1 ? () {
-                        CartModel.of(context).decProduct(cartProduct);
-                      } : null,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    Text(cartProduct.quantity.toString()),
-                    IconButton(
-                      icon: Icon(Icons.add),
-                      onPressed: () {
-                        CartModel.of(context).incProduct(cartProduct);
-                      },
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    FlatButton(
-                      onPressed: () {
-                        CartModel.of(context).removeCartItem(cartProduct);
-                      },
-                      child: Text("Remover"),
-                      textColor: Colors.grey[500],
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                )
-              ],
-            ),
-          ))
-        ],
+            Expanded(
+                child: Container(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    cartProduct.productData.title,
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                  ),
+                  Text(
+                    "Tamanho: ${cartProduct.size}",
+                    style: TextStyle(fontWeight: FontWeight.w300),
+                  ),
+                  Text(
+                    "R\$ ${cartProduct.productData.price.toStringAsFixed(2)}",
+                    style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.remove),
+                        onPressed: cartProduct.quantity > 1 ? () {
+                          CartModel.of(context).decProduct(cartProduct);
+                        } : null,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      Text(cartProduct.quantity.toString()),
+                      IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: () {
+                          CartModel.of(context).incProduct(cartProduct);
+                        },
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      FlatButton(
+                        onPressed: () {
+                          CartModel.of(context).removeCartItem(cartProduct);
+                        },
+                        child: Text("Remover"),
+                        textColor: Colors.grey[500],
+                      )
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  )
+                ],
+              ),
+            ))
+          ],
+        ),
       );
     }
 
