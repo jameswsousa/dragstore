@@ -37,12 +37,12 @@ class _ProductScreenState extends State<ProductScreen> {
             child: Carousel(
               images: product.images.map((url) {
                 return NetworkImage(url);
-              }).toList(),
+              }).toList(),dotPosition: DotPosition.bottomLeft,
               dotSize: 5,
               dotSpacing: 15,
-              dotBgColor: Colors.transparent,
-              dotColor: primaryColor,
-              dotIncreasedColor: primaryColor,
+              dotBgColor: primaryColor.withOpacity(0.3),
+              dotColor: Colors.yellow,
+              dotIncreasedColor: Colors.yellow,
               autoplay: false,
             ),
           ),
