@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
       model: UserModel(),
       child: ScopedModelDescendant<UserModel>(
         builder: (context, child, model) {
-          print(model.isLoggedIn());
           return ScopedModel<CartModel>(
               model: CartModel(model),
               child: MaterialApp(

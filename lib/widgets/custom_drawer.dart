@@ -47,8 +47,6 @@ class CustomDrawer extends StatelessWidget {
                       left: 0,
                       child: ScopedModelDescendant<UserModel>(
                         builder: (context, child, model) {
-                          print(model.isLoggedIn());
-                          print(model.userData);
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
