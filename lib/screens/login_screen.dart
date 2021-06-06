@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         if (_formkey.currentState.validate()) {}
                         model.signIn(
-                            email: _emailcontroller.text,
+                            email: _emailcontroller.text.trim(),
                             onFail: _onFail,
                             onSuccess: _onSuccess,
                             pass: _passcontroller.text);
