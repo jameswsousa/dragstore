@@ -95,9 +95,7 @@ class OrdersTab extends StatelessWidget {
                     alignment: Alignment.center,
                     fit: StackFit.expand,
                     children: <Widget>[
-                      Center(
-                        child: CustomLoadingWidget(),
-                      ),
+                      CustomLoadingWidget(),
                       Image.network(
                         'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/orderlogin.gif?alt=media&token=0c6b124c-eadc-4700-b1de-4f277fe2924b',
                         fit: BoxFit.cover,
