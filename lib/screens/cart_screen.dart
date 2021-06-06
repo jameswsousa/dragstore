@@ -108,14 +108,22 @@ class CartScreen extends StatelessWidget {
                       child: Container(
                         width: 250,
                         height: 300,
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/vaicomprar%20(2).gif?alt=media&token=71e74190-b84e-4947-8e63-fa738d70f805',
-                          fit: BoxFit.cover,
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: <Widget>[
+                            CustomLoadingWidget(),
+                            Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/lojavirtualjames.appspot.com/o/vaicomprar%20(2).gif?alt=media&token=71e74190-b84e-4947-8e63-fa738d70f805',
+                              fit: BoxFit.cover,
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  SizedBox(
+                    height: 16,
+                  ),
                   Text(
                     "Nenhum produto no carrinho!",
                     style: TextStyle(
